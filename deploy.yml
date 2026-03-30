@@ -1,0 +1,1 @@
+name: Deploy CI/CD on: push: branches: [ "main" ] jobs: deploy: runs-on: ubuntu-latest steps: - name: Checkout código uses: actions/checkout@v3 - name: Deploy para servidor uses: appleboy/ssh-action@v0.1.6 with: host: TEU_IP username: TEU_USER key: ${{ secrets.SSH_KEY }} script: | cp index.html /var/www/html/index.html
